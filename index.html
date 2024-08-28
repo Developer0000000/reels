@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Reels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #000;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            min-width: 100vw;
+            min-height: 100vh;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .swiper-slide {
+            height: 100% !important;
+            width: 25vw;
+            background: #eee;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-video {
+            width: 19rem !important;
+            height: 29rem !important;
+        }
+
+        .popup-video video {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        @media screen and (max-width: 500px) {
+            .swiper-slide {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section class="container pt-5 pb-3">
+            <div class="tab-content" id="myTabContent">
+                <div class="movie-item mb-50 mt-5">
+                    <div class="movie-poster px-lg-5 row">
+                        <div class="popup-video mb-5 col-3">
+                            <video data-video-id='reel_1' class="video-style">
+                                <source
+                                    src="https://res.cloudinary.com/dje7ukgcq/video/upload/v1723804305/assets/tribute_heroes_bq1jsm.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="popup-video mb-5 col-3">
+                            <video data-video-id='reel_2' class="video-style">
+                                <source
+                                    src="https://videos.pexels.com/video-files/3205789/3205789-hd_1080_1920_25fps.mp4">
+                            </video>
+                        </div>
+                        <div class="popup-video mb-5 col-3">
+                            <video data-video-id='reel_3' class="video-style">
+                                <source
+                                    src="https://stagger2.zologics.com/storage/videos/JjklzVJ1GrKLLS02a7dP4S8d9bRe4dECyL4aqJ7k.mp4">
+                            </video>
+                        </div>
+                        <div class="popup-video mb-5 col-3">
+                            <video data-video-id='reel_4' class="video-style">
+                                <source
+                                    src="https://stagger2.zologics.com/storage/videos/RCXIRMUdtaSj7kMEupkPJL4FjCpZQeBTaubmN55f.mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+
+            <span class="popup-close" id="popup-close">
+                <i class="ri-arrow-left-line"></i>
+            </span>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <video loop data-video-id='reel_1' class="video-style" width="100%" height="100%"
+                            style="object-fit: cover; object-position: center center;">
+                            <source
+                                src="https://res.cloudinary.com/dje7ukgcq/video/upload/v1723804305/assets/tribute_heroes_bq1jsm.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video loop data-video-id='reel_2' class="video-style" width="100%" height="100%"
+                            style="object-fit: cover; object-position: center center;">
+                            <source src="https://videos.pexels.com/video-files/3205789/3205789-hd_1080_1920_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video loop data-video-id='reel_3' class="video-style" width="100%" height="100%"
+                            style="object-fit: cover; object-position: center center;">
+                            <source
+                                src="https://stagger2.zologics.com/storage/videos/JjklzVJ1GrKLLS02a7dP4S8d9bRe4dECyL4aqJ7k.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video loop data-video-id='reel_4' class="video-style" width="100%" height="100%"
+                            style="object-fit: cover; object-position: center center;">
+                            <source
+                                src="https://stagger2.zologics.com/storage/videos/RCXIRMUdtaSj7kMEupkPJL4FjCpZQeBTaubmN55f.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Swiper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                centeredSlides: true,
+                direction: 'vertical',
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                    pageUpDown: true
+                },
+                mousewheel: true,
+                nested: true,
+                touchStartPreventDefault: false,
+                noSwipeClass: 'swiper-no-swiping',
+            });
+
+            let swiperContainer = document.querySelector('.mySwiper');
+            const slides = swiperContainer.querySelectorAll('.swiper-slide');
+            let swiperInstance = swiperContainer.swiper;
+
+            const videoThumbnails = document.querySelectorAll('.popup-video video');
+            const popup = document.getElementById('popup');
+            const popupClose = document.getElementById('popup-close');
+
+            var isSlideBeingAdded = false;
+
+            videoThumbnails.forEach((thumbnail, i) => {
+                thumbnail.addEventListener('click', async () => {
+                    popup.style.display = 'flex';
+
+                    const activeSlide = slides[i];
+                    if (activeSlide) {
+                        isSlideBeingAdded = true;
+
+                        swiperInstance.addSlide(0, activeSlide);
+                        swiperInstance.slideTo(0, 0, false);
+
+                        let activeSlideVideo = activeSlide.querySelector('video');
+
+                        async function playVid() {
+                            if (activeSlideVideo.paused) {
+                                try {
+                                    await activeSlideVideo.play();
+                                } catch (error) {
+                                    console.error('Failed to play video:', error);
+                                }
+                            }
+                        }
+
+                        await playVid(); // Wait for the video to start playing
+                        isSlideBeingAdded = false; // Reset the flag after slide is added
+                    }
+                });
+            });
+
+
+            var debounceTimeout;
+            var DEBOUNCE_DELAY = 300;
+
+            swiperInstance.on('slideChange', () => {
+                if (isSlideBeingAdded) return; // Skip if a slide is being added
+
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(() => {
+                    // Pause all videos in the popup
+                    const allVideos = popup.querySelectorAll('video');
+                    allVideos.forEach(video => {
+                        video.pause();
+                        video.currentTime = 0;
+                    });
+
+                    // Play the video in the active slide
+                    const activeSlideVideo = swiperInstance.slides[swiperInstance.activeIndex]
+                        .querySelector('video');
+
+                    if (activeSlideVideo) {
+                        async function playVid() {
+                            if (activeSlideVideo.paused) {
+                                try {
+                                    await activeSlideVideo.play();
+                                } catch (error) {
+                                    console.error('Failed to play video:', error);
+                                }
+                            }
+                        }
+
+                        playVid();
+                    }
+                }, DEBOUNCE_DELAY);
+            });
+
+            const closePopup = () => {
+                const activeSlideVideo = swiperInstance.slides[swiperInstance.activeIndex].querySelector('video');
+                popup.style.display = 'none';
+                if (activeSlideVideo && !activeSlideVideo.paused) {
+                    activeSlideVideo.pause();
+                    activeSlideVideo.currentTime = 0;
+                }
+            };
+            popupClose.addEventListener('click', closePopup);
+
+        })
+
+
+    </script>
+
+
+
+</body>
+
+</html>
